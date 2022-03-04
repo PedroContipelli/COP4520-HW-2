@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.io.*;
 
-public class Minotaur
+public class Minotaur1
 {
 	public static void main(String[] args) throws InterruptedException
 	{
