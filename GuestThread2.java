@@ -17,7 +17,7 @@ public class GuestThread2 extends Thread
 	
 	public void run()
 	{
-		while (boredom < 1)
+		while (Math.random() < boredom)
 		{
 			waitInQueue();
 			admireVase();
