@@ -17,6 +17,8 @@ public class Minotaur1
 		// Declare all threads. Have first guest be designated as counter
 		for (int i = 0; i < guests.length; i++)
 			guests[i] = new GuestThread1(cupcake, allVisited, i == 0);
+
+		long startTime = System.currentTimeMillis();
 		
 		// Minotaur continues choosing until a guest announces they have all visited
 		while (!allVisited.get())
@@ -31,8 +33,13 @@ public class Minotaur1
 			// Wait until guest has exited
 			guests[randomGuest].join();
 		}
+
+		// Calculate and print execution time
+		long endTime = System.currentTimeMillis();
+		long executionTime = endTime - startTime;
 		
-		System.out.printf("Execution finished after: %d entries into the labyrinth.\n", timesEntered);
-		System.out.printf("This should be approximately O(n^2). N is set to 50 by default\n", timesEntered);
+		System.out.printf("Execution time: %dms\n", executionTime);
+		System.out.printf("In total, there were %d entries into the labyrinth.\n", timesEntered);
+		System.out.printf("This should be approximately O(n^2), or about 2500 entries for default N = 50.\n", timesEntered);
 	}
 }

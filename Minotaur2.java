@@ -7,8 +7,8 @@ public class Minotaur2
 	public static void main(String[] args) throws InterruptedException
 	{	
 		// @TAs feel free to change these for testing
-		int numGuests = 100;
-		GuestThread2.enablePrintOut = false;
+		int numGuests = 10;
+		GuestThread2.enablePrintOut = true;
 
 		int queueSize = numGuests;
 		
