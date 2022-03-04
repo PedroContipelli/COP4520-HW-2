@@ -19,8 +19,4 @@ Some disadvantages are:
 Maurice Herlihy and Nir Shavit. 2008. The Art of Multiprocessor Programming. Morgan Kaufmann Publishers Inc., San Francisco, CA, USA.
 
 Technical advantages of using a queue:
- Cache-coherence Traffic: All threads spin on the same shared location causing
-cache-coherence traffic on every successful lock access (though less than with
-the TASLock).
- Critical Section Underutilization: Threads delay longer than necessary, causing
-the critical section to be underutilized.
+"In a queue, each thread can learn if its turn has arrived by checking whether its predecessor has finished. Cache-coherence traffic is reduced by having each thread spin on a different location. A queue also allows for better utilization of the critical section, since there is no need to guess when to attempt to access it: each thread is notified directly by its predecessor in the queue."
