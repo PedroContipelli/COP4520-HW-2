@@ -32,7 +32,7 @@ public class Minotaur
 			guests[randomGuest].join();
 		}
 		
-		System.out.printf("\nExecution finished after: %d entries into the labyrinth.", timesEntered);
-		System.out.printf("\nThis should be approximately O(n^2). N is set to 50 by default", timesEntered);
+		System.out.printf("Execution finished after: %d entries into the labyrinth.\n", timesEntered);
+		System.out.printf("This should be approximately O(n^2). N is set to 50 by default\n", timesEntered);
 	}
 }
