@@ -1,6 +1,6 @@
 import java.util.concurrent.atomic.*;
 
-public class GuestThread extends Thread
+public class GuestThread1 extends Thread
 {
 	static int totalGuests;
 	boolean designatedCounter;
@@ -10,7 +10,7 @@ public class GuestThread extends Thread
 	AtomicBoolean allVisited;
 	boolean IhaveEaten;
 	
-	public GuestThread(AtomicBoolean cupcake, AtomicBoolean allVisited, boolean designatedCounter)
+	public GuestThread1(AtomicBoolean cupcake, AtomicBoolean allVisited, boolean designatedCounter)
 	{
 		this.cupcake = cupcake;
 		this.allVisited = allVisited;
