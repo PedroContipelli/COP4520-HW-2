@@ -13,7 +13,7 @@ Some advantages of using a queue for this approach are:
 - It is more orderly, ensuring that guests will enter in the same order they got there.
 
 Some disadvantages are:
-- Guests are stuck waiting in line and cannot really do anything else while waiting in the queue.
+- Guests cannot really do anything else while they are stuck waiting in the queue.
 
 ### Sources:
 Maurice Herlihy and Nir Shavit. 2008. The Art of Multiprocessor Programming. Morgan Kaufmann Publishers Inc., San Francisco, CA, USA.
