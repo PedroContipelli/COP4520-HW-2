@@ -2,6 +2,7 @@ import java.util.concurrent.atomic.*;
 
 public class GuestThread2 extends Thread
 {
+	static boolean enablePrintOut;
 	static int size;
 	static volatile boolean[] queue;
 	static AtomicInteger tail;
@@ -17,11 +18,15 @@ public class GuestThread2 extends Thread
 	
 	public void run()
 	{
-		while (Math.random() < boredom)
+		while (boredom < 1)
 		{
-			waitInQueue();
-			admireVase();
-			leaveRoomAndNotifyNextGuest();
+			// Each guest has some random chance to decide to enter the queue
+			if (Math.random() < 0.00001)
+			{
+				waitInQueue();
+				admireVase();
+				leaveRoomAndNotifyNextGuest();
+			}
 		}
 	}
 	
@@ -30,7 +35,8 @@ public class GuestThread2 extends Thread
 		// Line up at end of queue
 		myQueueIndex = tail.getAndIncrement() % size;
 		
-		// System.out.printf("Guest %d lines up.\n", id);
+		if (enablePrintOut)
+			System.out.printf("Guest %d lines up at queue index %d.\n", id, myQueueIndex);
 		
 		// Wait until its my turn to enter showroom
 		while (!queue[myQueueIndex]) {};
@@ -38,15 +44,21 @@ public class GuestThread2 extends Thread
 	
 	public void admireVase()
 	{
-		// System.out.printf("Guest %d enters room.\n", id);
-		boredom += 0.25;
+		if (enablePrintOut)
+			System.out.printf("Guest %d enters room.\n", id);
+
+		// Stay in the room for random length of time
+		while (Math.random() > 0.0001) {}
+
+		boredom += 0.25 + Math.random();
 	}
 	
 	public void leaveRoomAndNotifyNextGuest()
 	{
 		queue[myQueueIndex] = false;
 		
-		// System.out.printf("Guest %d notifies next guest.\n", id);
+		if (enablePrintOut)
+			System.out.printf("Guest %d leaves and notifies next guest.\n", id);
 		
 		queue[(myQueueIndex + 1) % size] = true;
 	}
