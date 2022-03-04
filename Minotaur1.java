@@ -7,7 +7,7 @@ public class Minotaur1
 	public static void main(String[] args) throws InterruptedException
 	{
 		int numGuests = 50;
-		GuestThread.totalGuests = numGuests;
+		GuestThread1.totalGuests = numGuests;
 		Thread[] guests = new Thread[numGuests];
 
 		AtomicBoolean cupcake = new AtomicBoolean(true);
@@ -16,7 +16,7 @@ public class Minotaur1
 		
 		// Declare all threads. Have first guest be designated as counter
 		for (int i = 0; i < guests.length; i++)
-			guests[i] = new GuestThread(cupcake, allVisited, i == 0);
+			guests[i] = new GuestThread1(cupcake, allVisited, i == 0);
 		
 		// Minotaur continues choosing until a guest announces they have all visited
 		while (!allVisited.get())
