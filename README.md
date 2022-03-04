@@ -1,6 +1,6 @@
 ### Problem 1
-Compile: **javac Minotaur.java**<br>
-Run: **java Minotaur**
+Compile: **javac Minotaur1.java**<br>
+Run: **java Minotaur1**
 
 ### Problem 2
 Compile: **javac Minotaur2.java**<br>
