@@ -30,7 +30,7 @@ public class GuestThread extends Thread
 			if (count == totalGuests)
 			{
 				allVisited.set(true);
-				System.out.println("Guest: \"Mr. Minotaur, all the guests have visited the labyrinth!\"");
+				System.out.println("Guest: \"Mr. Minotaur, all the guests have visited the labyrinth!\"\n");
 			}
 		}
 		
